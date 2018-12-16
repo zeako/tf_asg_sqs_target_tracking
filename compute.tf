@@ -35,7 +35,7 @@ resource "aws_autoscaling_group" "this" {
 
   min_size          = "${local.az_count}"
   max_size          = "${local.az_count * 6}"
-  health_check_type = "ELB"
+  health_check_type = "EC2"
 
   launch_template {
     id      = "${aws_launch_template.this.id}"
